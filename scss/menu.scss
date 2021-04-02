@@ -1,0 +1,191 @@
+button {
+    background: none;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+header {
+    
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-family: "Oswald", sans-serif;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        box-shadow: 0 0 10px grey;
+        z-index: 1000;
+        background-color:rgba( $coffee, .9);
+
+        .navigation__inner-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1640px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            .navigation__toggle-bar {
+                display: none;
+                margin-left: auto;
+                
+                .openMenu {
+                    padding: 3px 13px;
+                    cursor: pointer;
+                    background-color: $yellow;
+                    border: 1px solid #4d4d4d;
+                    color: #4d4d4d;
+                    border-radius: 3px;
+                }
+
+                @media screen and (max-width: 992px) {
+                    display: block;
+                }
+            }
+
+            .navigation-menu {
+                flex: 1 1 80%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                transition: height 0.2s linear;
+                align-items: center;
+
+                .navigation-menu__link {
+                    font-size: 17px;
+                    padding: 3px 5px;
+                    &:first-child {
+                        position: relative;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: $yellow;
+                    }
+                    .submenu-catalog {
+                        position: absolute;
+                        top: 100%;
+                        border-radius: 5px;
+                        display: none;
+                        z-index: 999;
+                        background: white;
+                        max-height: 200px;
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        box-shadow: 0 0 10px gray;
+                        a {
+                            display: block;
+                            font-size: 15px;
+                            text-decoration: none;
+                            width: 100%;
+                            color:black; 
+                            padding: 10px 15px;
+                            background-color:white;
+                            transition: background-color .015s linear;
+                            &:hover {
+                                background-color: $yellow;
+                                color: $coffee;
+                            }
+                        }
+                        &.opened {
+                            display: block;
+                        }
+                    }
+                }
+
+                .menuCloser {
+                    display: none;
+                }
+
+                @media screen and (max-width: 992px) {
+                    display: none;
+                    background-color: $coffee;
+                    overflow: hidden;
+                    position: fixed;
+                    top: 0%;
+                    left: 0;
+                    height: 100vh;
+                    width: 100%;
+
+                    .navigation-menu__link {
+                        margin-top: 10px;
+                    }
+
+                    .menuCloser {
+                        display: block;
+                        margin-top: 25px;
+
+                        .close {
+                            background: none;
+                            border: none;
+                            font-size: 25px;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &.opened {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        -webkit-animation: menuOpen 0.5s linear alternate both;
+                        animation: menuOpen 0.5s linear alternate both;
+                    }
+
+                    &.closed {
+                        -webkit-animation: menuClose 0.5s linear alternate both;
+                        animation: menuClose 0.5s linear alternate both;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@-webkit-keyframes menuOpen {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes menuOpen {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@-webkit-keyframes menuClose {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: -100%;
+    }
+}
+
+@keyframes menuClose {
+    0% {
+        top: 0%;
+    }
+
+    100% {
+        top: -100%;
+    }
+}

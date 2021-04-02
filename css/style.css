@@ -69,66 +69,258 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-sizing: border-box;
 }
 
-/* line 16, ../scss/style.scss */
+/* line 1, ../scss/menu.scss */
+button {
+  background: none;
+}
+/* line 4, ../scss/menu.scss */
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* line 12, ../scss/menu.scss */
+header .navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 0 0 10px grey;
+  z-index: 1000;
+  background-color: rgba(45, 46, 44, 0.9);
+}
+/* line 24, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1640px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/* line 35, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation__toggle-bar {
+  display: none;
+  margin-left: auto;
+}
+/* line 39, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation__toggle-bar .openMenu {
+  padding: 3px 13px;
+  cursor: pointer;
+  background-color: #fed531;
+  border: 1px solid #4d4d4d;
+  color: #4d4d4d;
+  border-radius: 3px;
+}
+@media screen and (max-width: 992px) {
+  /* line 35, ../scss/menu.scss */
+  header .navigation .navigation__inner-wrapper .navigation__toggle-bar {
+    display: block;
+  }
+}
+/* line 53, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu {
+  flex: 1 1 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  transition: height 0.2s linear;
+  align-items: center;
+}
+/* line 62, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link {
+  font-size: 17px;
+  padding: 3px 5px;
+}
+/* line 65, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link:first-child {
+  position: relative;
+}
+/* line 68, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link a {
+  text-decoration: none;
+  color: #fed531;
+}
+/* line 72, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link .submenu-catalog {
+  position: absolute;
+  top: 100%;
+  border-radius: 5px;
+  display: none;
+  z-index: 999;
+  background: white;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: 0 0 10px gray;
+}
+/* line 83, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link .submenu-catalog a {
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  width: 100%;
+  color: black;
+  padding: 10px 15px;
+  background-color: white;
+  transition: background-color .015s linear;
+}
+/* line 92, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link .submenu-catalog a:hover {
+  background-color: #fed531;
+  color: #2d2e2c;
+}
+/* line 97, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link .submenu-catalog.opened {
+  display: block;
+}
+/* line 103, ../scss/menu.scss */
+header .navigation .navigation__inner-wrapper .navigation-menu .menuCloser {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  /* line 53, ../scss/menu.scss */
+  header .navigation .navigation__inner-wrapper .navigation-menu {
+    display: none;
+    background-color: #2d2e2c;
+    overflow: hidden;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+  }
+  /* line 117, ../scss/menu.scss */
+  header .navigation .navigation__inner-wrapper .navigation-menu .navigation-menu__link {
+    margin-top: 10px;
+  }
+  /* line 121, ../scss/menu.scss */
+  header .navigation .navigation__inner-wrapper .navigation-menu .menuCloser {
+    display: block;
+    margin-top: 25px;
+  }
+  /* line 125, ../scss/menu.scss */
+  header .navigation .navigation__inner-wrapper .navigation-menu .menuCloser .close {
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  /* line 133, ../scss/menu.scss */
+  header .navigation .navigation__inner-wrapper .navigation-menu.opened {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-animation: menuOpen 0.5s linear alternate both;
+    animation: menuOpen 0.5s linear alternate both;
+  }
+  /* line 142, ../scss/menu.scss */
+  header .navigation .navigation__inner-wrapper .navigation-menu.closed {
+    -webkit-animation: menuClose 0.5s linear alternate both;
+    animation: menuClose 0.5s linear alternate both;
+  }
+}
+
+@-webkit-keyframes menuOpen {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+@keyframes menuOpen {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+@-webkit-keyframes menuClose {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+@keyframes menuClose {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+/* line 17, ../scss/style.scss */
 :root {
   font-family: "Aleo", sans-serif;
 }
 
-/* line 20, ../scss/style.scss */
+/* line 21, ../scss/style.scss */
 html {
   font-size: 16px;
 }
 @media screen and (max-width: 768px) {
-  /* line 20, ../scss/style.scss */
+  /* line 21, ../scss/style.scss */
   html {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 576px) {
-  /* line 20, ../scss/style.scss */
+  /* line 21, ../scss/style.scss */
   html {
     font-size: 12px;
   }
 }
 @media screen and (max-width: 480px) {
-  /* line 20, ../scss/style.scss */
+  /* line 21, ../scss/style.scss */
   html {
     font-size: 10px;
   }
 }
 
-/* line 36, ../scss/style.scss */
+/* line 37, ../scss/style.scss */
 .dark-bg {
   background-color: #2d2e2c;
 }
 
-/* line 40, ../scss/style.scss */
+/* line 41, ../scss/style.scss */
 .subheading {
   text-transform: uppercase;
   font-size: 1.875rem;
   margin-bottom: 20px;
 }
 
-/* line 46, ../scss/style.scss */
+/* line 47, ../scss/style.scss */
 .heading {
   font-size: 5rem;
 }
 
-/* line 50, ../scss/style.scss */
+/* line 51, ../scss/style.scss */
 .flex-65 {
   min-width: 0%;
   max-width: 65%;
   width: 100%;
 }
 
-/* line 55, ../scss/style.scss */
+/* line 56, ../scss/style.scss */
 .flex-35 {
   min-width: 0%;
   max-width: 35%;
   width: 100%;
 }
 
-/* line 60, ../scss/style.scss */
+/* line 61, ../scss/style.scss */
 .triangle {
   position: absolute;
   -webkit-user-select: none;
@@ -137,18 +329,18 @@ html {
   user-select: none;
   pointer-events: none;
 }
-/* line 68, ../scss/style.scss */
+/* line 69, ../scss/style.scss */
 .triangle.mini {
   min-width: 30px;
   max-width: 4%;
 }
-/* line 72, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 .triangle.medium {
   min-width: 50px;
   max-width: 10%;
 }
 
-/* line 77, ../scss/style.scss */
+/* line 78, ../scss/style.scss */
 .consultation {
   display: block;
   text-decoration: none;
@@ -164,13 +356,53 @@ html {
   font-weight: bold;
   transition: box-shadow .2s linear, color .2s linear;
 }
-/* line 92, ../scss/style.scss */
+/* line 93, ../scss/style.scss */
 .consultation:hover {
   box-shadow: inset 300px 0 0px 1px #2d2e2c;
   color: #fed531;
 }
 
-/* line 99, ../scss/style.scss */
+/* line 98, ../scss/style.scss */
+#catalog-button {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 18px;
+  padding: unset;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 7px 10px;
+  background-color: #fed531;
+  color: #2d2e2c;
+}
+/* line 112, ../scss/style.scss */
+#catalog-button p {
+  display: none;
+  width: 0%;
+  overflow: hidden;
+}
+/* line 117, ../scss/style.scss */
+#catalog-button:hover {
+  max-width: 300px;
+}
+/* line 119, ../scss/style.scss */
+#catalog-button:hover p {
+  display: block;
+  width: 100%;
+  margin-right: 5px;
+}
+/* line 126, ../scss/style.scss */
+#catalog-button svg {
+  display: block;
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+/* line 134, ../scss/style.scss */
 main #main-section {
   position: relative;
   height: 100vh;
@@ -181,7 +413,7 @@ main #main-section {
   align-items: center;
   background-color: #fed531;
 }
-/* line 109, ../scss/style.scss */
+/* line 144, ../scss/style.scss */
 main #main-section .triangles-wrapper {
   position: absolute;
   top: 0;
@@ -189,58 +421,68 @@ main #main-section .triangles-wrapper {
   left: 0;
   right: 0;
   max-width: 100%;
+  z-index: 0;
 }
-/* line 118, ../scss/style.scss */
+/* line 153, ../scss/style.scss */
 main #main-section .triangles-wrapper .triangle:nth-of-type(1) {
   top: 5%;
   left: 15%;
 }
-/* line 123, ../scss/style.scss */
+/* line 158, ../scss/style.scss */
 main #main-section .triangles-wrapper .triangle:nth-of-type(2) {
   top: 3%;
   right: 20%;
 }
-/* line 128, ../scss/style.scss */
+/* line 163, ../scss/style.scss */
 main #main-section .triangles-wrapper .triangle:nth-of-type(3) {
   bottom: 20%;
   left: 10%;
 }
-/* line 133, ../scss/style.scss */
+/* line 168, ../scss/style.scss */
 main #main-section .triangles-wrapper .triangle:nth-of-type(4) {
   bottom: 10%;
   left: 30%;
 }
-/* line 138, ../scss/style.scss */
+/* line 173, ../scss/style.scss */
 main #main-section .triangles-wrapper .triangle:nth-of-type(5) {
   top: 50%;
   right: 15%;
 }
-/* line 143, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 main #main-section .triangles-wrapper .triangle:nth-of-type(6) {
   bottom: 0;
   right: 0;
 }
-/* line 150, ../scss/style.scss */
+/* line 185, ../scss/style.scss */
 main #main-section .middle-text-wrapper {
   max-width: 100%;
   text-align: center;
   padding-right: 15px;
   padding-left: 15px;
+  z-index: 9;
 }
-/* line 156, ../scss/style.scss */
+/* line 191, ../scss/style.scss */
 main #main-section .middle-text-wrapper .text-box {
   margin-top: 25px;
-  padding: 15px;
   color: #fed531;
   font-family: sans-serif;
   font-size: 20px;
 }
-/* line 165, ../scss/style.scss */
+/* line 197, ../scss/style.scss */
+main #main-section .middle-text-wrapper .text-box a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  color: #fed531;
+  text-decoration: none;
+}
+/* line 208, ../scss/style.scss */
 main #main-section .arrow-down {
   position: absolute;
   bottom: 2%;
 }
-/* line 171, ../scss/style.scss */
+/* line 214, ../scss/style.scss */
 main #about-me {
   position: relative;
   min-height: 70vh;
@@ -249,63 +491,63 @@ main #about-me {
   flex-direction: row;
 }
 @media screen and (max-width: 768px) {
-  /* line 171, ../scss/style.scss */
+  /* line 214, ../scss/style.scss */
   main #about-me {
     align-items: center;
     background-color: #fed531;
   }
 }
-/* line 183, ../scss/style.scss */
+/* line 226, ../scss/style.scss */
 main #about-me .flex-65 {
   padding-left: 10%;
   background-color: #fed531;
   padding-top: 25px;
 }
-/* line 188, ../scss/style.scss */
+/* line 231, ../scss/style.scss */
 main #about-me .flex-65 .heading {
   font-family: sans-serif;
   font-size: 4rem;
 }
-/* line 193, ../scss/style.scss */
+/* line 236, ../scss/style.scss */
 main #about-me .flex-65 .subheading {
   font-family: sans-serif;
   font-size: 1.7rem;
   font-weight: bold;
 }
-/* line 198, ../scss/style.scss */
+/* line 241, ../scss/style.scss */
 main #about-me .flex-65 .subheading:nth-of-type(2) {
   margin-top: 20px;
 }
-/* line 203, ../scss/style.scss */
+/* line 246, ../scss/style.scss */
 main #about-me .flex-65 p {
   font-size: 18px;
   max-width: 550px;
   padding-right: 15px;
 }
-/* line 209, ../scss/style.scss */
+/* line 252, ../scss/style.scss */
 main #about-me .flex-65 .contacts-container {
   display: flex;
   max-width: 250px;
   align-items: center;
   margin-bottom: 25px;
 }
-/* line 215, ../scss/style.scss */
+/* line 258, ../scss/style.scss */
 main #about-me .flex-65 .contacts-container a {
   width: 100%;
 }
-/* line 218, ../scss/style.scss */
+/* line 261, ../scss/style.scss */
 main #about-me .flex-65 .contacts-container a svg {
   height: 50px;
 }
 @media screen and (max-width: 768px) {
-  /* line 183, ../scss/style.scss */
+  /* line 226, ../scss/style.scss */
   main #about-me .flex-65 {
     min-width: 0%;
     max-width: 100%;
     padding-top: 0;
   }
 }
-/* line 230, ../scss/style.scss */
+/* line 273, ../scss/style.scss */
 main #about-me .flex-35 {
   background: url("../images/gregory.jpg");
   background-repeat: no-repeat;
@@ -315,18 +557,18 @@ main #about-me .flex-35 {
   filter: grayscale(100%);
 }
 @media screen and (max-width: 768px) {
-  /* line 230, ../scss/style.scss */
+  /* line 273, ../scss/style.scss */
   main #about-me .flex-35 {
     display: none;
   }
 }
-/* line 244, ../scss/style.scss */
+/* line 287, ../scss/style.scss */
 main #health-concept {
   display: flex;
   flex-direction: column;
   background-color: #2d2e2c;
 }
-/* line 250, ../scss/style.scss */
+/* line 293, ../scss/style.scss */
 main #health-concept .header {
   position: relative;
   min-height: 450px;
@@ -341,7 +583,7 @@ main #health-concept .header {
   align-items: center;
   justify-content: center;
 }
-/* line 264, ../scss/style.scss */
+/* line 307, ../scss/style.scss */
 main #health-concept .header .dark-overlay {
   position: absolute;
   top: 0;
@@ -351,20 +593,20 @@ main #health-concept .header .dark-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
-/* line 274, ../scss/style.scss */
+/* line 317, ../scss/style.scss */
 main #health-concept .header .centred-content {
   z-index: 5;
 }
-/* line 275, ../scss/style.scss */
+/* line 318, ../scss/style.scss */
 main #health-concept .header .centred-content h4 {
   padding-top: auto;
   margin-bottom: 25px;
 }
-/* line 284, ../scss/style.scss */
+/* line 327, ../scss/style.scss */
 main #health-concept .body {
   border-top: 5px solid #fed531;
 }
-/* line 287, ../scss/style.scss */
+/* line 330, ../scss/style.scss */
 main #health-concept .body .links {
   margin-right: auto;
   margin-left: auto;
@@ -372,12 +614,12 @@ main #health-concept .body .links {
   display: flex;
   flex-direction: row;
 }
-/* line 294, ../scss/style.scss */
+/* line 337, ../scss/style.scss */
 main #health-concept .body .links .link {
   position: relative;
   width: 100%;
 }
-/* line 298, ../scss/style.scss */
+/* line 341, ../scss/style.scss */
 main #health-concept .body .links .link::before {
   content: "";
   display: block;
@@ -389,7 +631,7 @@ main #health-concept .body .links .link::before {
   -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
   clip-path: polygon(100% 0, 0 0, 50% 100%);
 }
-/* line 311, ../scss/style.scss */
+/* line 354, ../scss/style.scss */
 main #health-concept .body .links .link a {
   display: block;
   width: 100%;
@@ -404,23 +646,23 @@ main #health-concept .body .links .link a {
   font-size: 20px;
 }
 @media screen and (max-width: 1024px) {
-  /* line 287, ../scss/style.scss */
+  /* line 330, ../scss/style.scss */
   main #health-concept .body .links {
     flex-wrap: wrap;
     justify-content: center;
   }
-  /* line 330, ../scss/style.scss */
+  /* line 373, ../scss/style.scss */
   main #health-concept .body .links .link {
     counter-increment: link;
     max-width: 50%;
     background-color: #fed531;
     box-shadow: 0 0 0 1px #2d2e2c;
   }
-  /* line 336, ../scss/style.scss */
+  /* line 379, ../scss/style.scss */
   main #health-concept .body .links .link:last-child {
     max-width: 100%;
   }
-  /* line 340, ../scss/style.scss */
+  /* line 383, ../scss/style.scss */
   main #health-concept .body .links .link:before {
     content: counter(link);
     display: flex;
@@ -434,23 +676,23 @@ main #health-concept .body .links .link a {
     border-radius: 50%;
     margin-top: 15px;
   }
-  /* line 354, ../scss/style.scss */
+  /* line 397, ../scss/style.scss */
   main #health-concept .body .links .link a {
     color: #2d2e2c;
   }
 }
-/* line 364, ../scss/style.scss */
+/* line 407, ../scss/style.scss */
 main #video-section #video-iframe {
   display: block;
   max-height: 100vh;
   width: 100%;
 }
-/* line 371, ../scss/style.scss */
+/* line 414, ../scss/style.scss */
 main #privilege {
   display: flex;
   flex-direction: column;
 }
-/* line 375, ../scss/style.scss */
+/* line 418, ../scss/style.scss */
 main #privilege .image {
   background-image: url("../images/privilege.jpg");
   background-size: cover;
@@ -460,7 +702,7 @@ main #privilege .image {
   filter: grayscale(100%);
   flex-basis: 70vh;
 }
-/* line 385, ../scss/style.scss */
+/* line 428, ../scss/style.scss */
 main #privilege .description {
   background-color: #fed531;
   display: flex;
@@ -469,17 +711,17 @@ main #privilege .description {
   justify-content: center;
   padding: 15px;
 }
-/* line 393, ../scss/style.scss */
+/* line 436, ../scss/style.scss */
 main #privilege .description .subheading {
   margin-bottom: 0;
 }
-/* line 397, ../scss/style.scss */
+/* line 440, ../scss/style.scss */
 main #privilege .description .flex-col {
   padding: 15px;
   color: #2d2e2c;
   text-align: center;
 }
-/* line 402, ../scss/style.scss */
+/* line 445, ../scss/style.scss */
 main #privilege .description .flex-col:nth-child(2) {
   font-size: 1.5rem;
   max-width: 700px;
@@ -487,32 +729,32 @@ main #privilege .description .flex-col:nth-child(2) {
   font-weight: bold;
 }
 @media screen and (max-width: 768px) {
-  /* line 385, ../scss/style.scss */
+  /* line 428, ../scss/style.scss */
   main #privilege .description {
     flex-direction: column;
   }
 }
-/* line 416, ../scss/style.scss */
+/* line 459, ../scss/style.scss */
 main #goods-for-home {
   display: block;
   padding-top: 25px;
   background-color: #2d2e2c;
   text-align: center;
 }
-/* line 422, ../scss/style.scss */
+/* line 465, ../scss/style.scss */
 main #goods-for-home .heading,
 main #goods-for-home .subheading {
   color: #fed531;
 }
-/* line 427, ../scss/style.scss */
+/* line 470, ../scss/style.scss */
 main #goods-for-home .heading {
   margin-bottom: 20px;
 }
-/* line 431, ../scss/style.scss */
+/* line 474, ../scss/style.scss */
 main #goods-for-home .subheading {
   margin-bottom: 0;
 }
-/* line 435, ../scss/style.scss */
+/* line 478, ../scss/style.scss */
 main #goods-for-home .cards {
   padding-top: 30px;
   display: flex;
@@ -525,26 +767,26 @@ main #goods-for-home .cards {
   padding-left: 10px;
   padding-bottom: 10px;
 }
-/* line 447, ../scss/style.scss */
+/* line 490, ../scss/style.scss */
 main #goods-for-home .cards a {
   flex-basis: 320px;
   display: block;
   margin: 10px;
   text-decoration: none;
 }
-/* line 453, ../scss/style.scss */
+/* line 496, ../scss/style.scss */
 main #goods-for-home .cards a .card {
   max-width: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-/* line 459, ../scss/style.scss */
+/* line 502, ../scss/style.scss */
 main #goods-for-home .cards a .card .card-img {
   flex-basis: 208px;
   max-height: 208px;
 }
-/* line 463, ../scss/style.scss */
+/* line 506, ../scss/style.scss */
 main #goods-for-home .cards a .card .card-img img {
   max-width: 100%;
   max-height: 208px;
@@ -560,48 +802,48 @@ main #goods-for-home .cards a .card .card-img img {
   transition: filter .1s linear, -webkit-filter .1s linear;
   transition: filter .1s linear, -webkit-filter .2s linear;
 }
-/* line 480, ../scss/style.scss */
+/* line 523, ../scss/style.scss */
 main #goods-for-home .cards a .card .card-body {
   background-color: #fed531;
   color: #2d2e2c;
   padding: 10px;
   line-height: 1.2;
 }
-/* line 486, ../scss/style.scss */
+/* line 529, ../scss/style.scss */
 main #goods-for-home .cards a .card .card-body .card-heading {
   font-size: 20px;
   margin-top: 15px;
   margin-bottom: 20px;
 }
-/* line 492, ../scss/style.scss */
+/* line 535, ../scss/style.scss */
 main #goods-for-home .cards a .card .card-body .card-description {
   max-width: 90%;
   margin-right: auto;
   margin-left: auto;
 }
-/* line 501, ../scss/style.scss */
+/* line 544, ../scss/style.scss */
 main #goods-for-home .cards a .card:hover .card-img img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 @media screen and (max-width: 800px) {
-  /* line 435, ../scss/style.scss */
+  /* line 478, ../scss/style.scss */
   main #goods-for-home .cards {
     flex-direction: column;
   }
-  /* line 514, ../scss/style.scss */
+  /* line 557, ../scss/style.scss */
   main #goods-for-home .cards a {
     flex-basis: auto;
   }
-  /* line 517, ../scss/style.scss */
+  /* line 560, ../scss/style.scss */
   main #goods-for-home .cards a .card {
     flex-direction: row;
   }
-  /* line 520, ../scss/style.scss */
+  /* line 563, ../scss/style.scss */
   main #goods-for-home .cards a .card .card-img {
     flex-basis: 40%;
   }
-  /* line 524, ../scss/style.scss */
+  /* line 567, ../scss/style.scss */
   main #goods-for-home .cards a .card .card-body {
     display: flex;
     flex-direction: column;
@@ -609,19 +851,19 @@ main #goods-for-home .cards a .card:hover .card-img img {
     flex-basis: 60%;
   }
 }
-/* line 536, ../scss/style.scss */
+/* line 579, ../scss/style.scss */
 main #team {
   text-align: center;
   background-color: #2d2e2c;
   color: #fed531;
   padding: 50px 15px 15px 15px;
 }
-/* line 542, ../scss/style.scss */
+/* line 585, ../scss/style.scss */
 main #team .subheading {
   margin-bottom: 0;
   margin-top: 15px;
 }
-/* line 547, ../scss/style.scss */
+/* line 590, ../scss/style.scss */
 main #team .cards {
   display: flex;
   flex-direction: row;
@@ -631,17 +873,17 @@ main #team .cards {
   max-width: 1024px;
   justify-content: center;
 }
-/* line 556, ../scss/style.scss */
+/* line 599, ../scss/style.scss */
 main #team .cards .card {
   flex-basis: 320px;
   display: block;
   margin: 15px;
 }
-/* line 561, ../scss/style.scss */
+/* line 604, ../scss/style.scss */
 main #team .cards .card .card-img {
   flex-basis: 208px;
 }
-/* line 564, ../scss/style.scss */
+/* line 607, ../scss/style.scss */
 main #team .cards .card .card-img img {
   max-width: 200px;
   width: 100%;
@@ -652,14 +894,14 @@ main #team .cards .card .card-img img {
   -o-object-position: center;
   object-position: center;
 }
-/* line 576, ../scss/style.scss */
+/* line 619, ../scss/style.scss */
 main #team .cards .card .card-body .card-heading {
   font-size: 24px;
   margin-top: 15px;
   margin-bottom: 15px;
   font-weight: bold;
 }
-/* line 582, ../scss/style.scss */
+/* line 625, ../scss/style.scss */
 main #team .cards .card .card-body .card-description {
   font-size: 18px;
   max-width: 90%;
@@ -667,9 +909,31 @@ main #team .cards .card .card-body .card-description {
   margin-left: auto;
   font-weight: lighter;
 }
+/* line 632, ../scss/style.scss */
+main #team .cards .card .card-body .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* line 637, ../scss/style.scss */
+main #team .cards .card .card-body .links a {
+  margin: 0 10px;
+}
+/* line 640, ../scss/style.scss */
+main #team .cards .card .card-body .links svg {
+  width: 40px;
+}
 @media screen and (max-width: 800px) {
-  /* line 547, ../scss/style.scss */
+  /* line 590, ../scss/style.scss */
   main #team .cards {
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* line 654, ../scss/style.scss */
+  .hide-on-mobile {
+    display: none;
   }
 }
