@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/video.css">
+    <title>Video</title>
+</head>
+<body>
+    <video preload="auto" class="video-player">
+        <source src="./Coral_main_hd_3mbit.mp4">
+    </video>
+    <!-- <iframe width="1280" height="720" src="https://www.youtube.com/embed/cQzfD50GJMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    <div  class="video-button__play">
+        <div class="centred-content">
+            <img src="../images/play.svg" alt="Play video">
+            <h5 class="heading">Добро пожаловать</h5>
+            <p class="subheading">в экомарект Coral Club</p>
+        </div>
+       
+    </div>
+    <div class="video-controls">
+        <div class="pause-stop">
+            <img class="other-btn__play" src="../images/play.svg" width="40" alt="Play video">
+            <img class="btn-pause hide" src="../images/pause.png" width="40" alt="Pause video">
+            <img class="video-button__stop" src="../images/stop.png" width="40" alt="Stop video">
+        </div>
+        <div class="video-progress-bar">
+            <input type="range" class="video-progress">
+        </div>
+        <div class="timer">
+            <p><span class="video-time__passed"></span> / <span class="video-time__total"></span></p>
+        </div>
+    </div>
+    <script src="video-controls.js"></script>
+</body>
+</html>

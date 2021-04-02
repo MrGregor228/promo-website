@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Aleo&display=swap");
+/* line 5, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Ruby26-x64/lib/ruby/gems/2.6.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 7, ../scss/video.scss */
+:root {
+  font-family: "Aleo", sans-serif;
+}
+
+/* line 10, ../scss/video.scss */
+html {
+  font-size: 16px;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+  /* line 10, ../scss/video.scss */
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 576px) {
+  /* line 10, ../scss/video.scss */
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 10, ../scss/video.scss */
+  html {
+    font-size: 10px;
+  }
+}
+
+/* line 25, ../scss/video.scss */
+body {
+  position: relative;
+}
+
+/* line 28, ../scss/video.scss */
+.subheading {
+  text-transform: uppercase;
+  font-size: 1.875rem;
+  color: #fed531;
+}
+
+/* line 35, ../scss/video.scss */
+.heading {
+  font-size: 4.5rem;
+  color: #fed531;
+  margin-bottom: 20px;
+}
+
+/* line 41, ../scss/video.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 45, ../scss/video.scss */
+video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+@media screen and (max-width: 992px) {
+  /* line 45, ../scss/video.scss */
+  video {
+    max-width: 100%;
+    -o-object-position: center;
+    object-position: center;
+  }
+}
+
+/* line 63, ../scss/video.scss */
+.video-button__play {
+  position: fixed;
+  background-color: rgba(45, 46, 44, 0.75);
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* line 72, ../scss/video.scss */
+.video-button__play .centred-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* line 79, ../scss/video.scss */
+.video-button__play .centred-content img {
+  max-width: 120px;
+  width: 100%;
+  cursor: pointer;
+}
+@media screen and (max-width: 576px) {
+  /* line 85, ../scss/video.scss */
+  .video-button__play .centred-content h5, .video-button__play .centred-content p {
+    display: none;
+  }
+  /* line 88, ../scss/video.scss */
+  .video-button__play .centred-content img {
+    max-width: 70px;
+  }
+}
+
+/* line 97, ../scss/video.scss */
+.video-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  background-color: rgba(45, 46, 44, 0.5);
+  padding: 10px;
+}
+/* line 108, ../scss/video.scss */
+.video-controls .pause-stop {
+  max-width: 100px;
+  width: 100%;
+}
+/* line 112, ../scss/video.scss */
+.video-controls .pause-stop img {
+  cursor: pointer;
+}
+/* line 117, ../scss/video.scss */
+.video-controls .video-progress-bar {
+  max-width: 100%;
+  width: 100%;
+}
+/* line 121, ../scss/video.scss */
+.video-controls .video-progress-bar input {
+  width: 100%;
+  background: transparent;
+}
+/* line 127, ../scss/video.scss */
+.video-controls .timer {
+  font-family: sans-serif;
+  font-weight: bold;
+  width: 10%;
+  text-align: center;
+  color: #fed531;
+}
+
+/* line 137, ../scss/video.scss */
+.hide {
+  display: none;
+}
+
+/* line 141, ../scss/video.scss */
+input[type=range] {
+  width: 100%;
+  margin: 4px 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+}
+/* line 147, ../scss/video.scss */
+input[type=range]:focus {
+  outline: none;
+}
+/* line 151, ../scss/video.scss */
+input[type=range]::-webkit-slider-runnable-track {
+  background: #2d2e2c;
+  border: 0px solid transparent;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+/* line 161, ../scss/video.scss */
+input[type=range]::-webkit-slider-thumb {
+  margin-top: -4px;
+  width: 18px;
+  height: 18px;
+  background: #ffb500;
+  border: 0px solid transparent;
+  border: 0;
+  border-radius: 28px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+/* line 173, ../scss/video.scss */
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #3c3e3b;
+}
+/* line 177, ../scss/video.scss */
+input[type=range]::-moz-range-track {
+  background: #2d2e2c;
+  border: 0px solid transparent;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+/* line 187, ../scss/video.scss */
+input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #ffb500;
+  border: 0px solid transparent;
+  border: 0;
+  border-radius: 28px;
+  cursor: pointer;
+}
+/* line 197, ../scss/video.scss */
+input[type=range]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 4px 0;
+  color: transparent;
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+}
+/* line 207, ../scss/video.scss */
+input[type=range]::-ms-fill-lower {
+  background: #1e1e1d;
+  border: 0px solid transparent;
+  border: 0;
+  border-radius: 10px;
+}
+/* line 214, ../scss/video.scss */
+input[type=range]::-ms-fill-upper {
+  background: #2d2e2c;
+  border: 0px solid transparent;
+  border: 0;
+  border-radius: 10px;
+}
+/* line 221, ../scss/video.scss */
+input[type=range]::-ms-thumb {
+  width: 18px;
+  height: 18px;
+  background: #ffb500;
+  border: 0px solid transparent;
+  border: 0;
+  border-radius: 28px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+/* line 235, ../scss/video.scss */
+input[type=range]:focus::-ms-fill-lower {
+  background: #2d2e2c;
+}
+/* line 239, ../scss/video.scss */
+input[type=range]:focus::-ms-fill-upper {
+  background: #3c3e3b;
+}
+
+/*TODO: Use one of the selectors from https://stackoverflow.com/a/20541859/7077589 and figure out
+how to remove the virtical space around the range input in IE*/
+@supports (-ms-ime-align: auto) {
+  /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+  /* line 250, ../scss/video.scss */
+  input[type=range] {
+    margin: 0;
+    /*Edge starts the margin from the thumb, not the track as other browsers do*/
+  }
+}
